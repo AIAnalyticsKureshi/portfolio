@@ -4,14 +4,40 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Linkedin, Github, Mail } from "lucide-react";
 
+const FORMSPREE_KEY = "b57ecf4d-3389-439c-97c0-d3e58cdeb9ea";
+
 export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setTimeout(() => {
-      setIsSubmitted(true);
-    }, 500);
+    setIsLoading(true);
+    setError(null);
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_KEY}`, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        form.reset();
+      } else {
+        const json = await response.json();
+        setError(json?.errors?.[0]?.message ?? "Something went wrong. Please try again.");
+      }
+    } catch {
+      setError("Network error — please check your connection and try again.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -98,7 +124,8 @@ export default function Contact() {
                   <label htmlFor="name" className="text-sm tracking-wider text-[#64748B] font-bold uppercase">Name</label>
                   <input 
                     type="text" 
-                    id="name" 
+                    id="name"
+                    name="name"
                     required 
                     className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-[#0F172A] focus:outline-none focus:border-brand-purple/50 focus:bg-white transition-colors"
                   />
@@ -107,7 +134,8 @@ export default function Contact() {
                   <label htmlFor="email" className="text-sm tracking-wider text-[#64748B] font-bold uppercase">Email</label>
                   <input 
                     type="email" 
-                    id="email" 
+                    id="email"
+                    name="email"
                     required 
                     className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-[#0F172A] focus:outline-none focus:border-brand-purple/50 focus:bg-white transition-colors"
                   />
@@ -115,18 +143,31 @@ export default function Contact() {
                 <div className="space-y-2">
                   <label htmlFor="message" className="text-sm tracking-wider text-[#64748B] font-bold uppercase">Message</label>
                   <textarea 
-                    id="message" 
+                    id="message"
+                    name="message"
                     rows={4} 
                     required 
                     className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-[#0F172A] focus:outline-none focus:border-brand-purple/50 focus:bg-white transition-colors resize-none"
                   ></textarea>
                 </div>
                 <button 
-                  type="submit" 
-                  className="w-full py-4 bg-brand-purple/10 border border-brand-purple/40 text-brand-purple hover:text-white font-bold tracking-wide rounded-xl hover:shadow-[0_4px_20px_rgba(117,76,240,0.3)] hover:bg-brand-purple transition-all duration-300"
+                  type="submit"
+                  disabled={isLoading}
+                  className="w-full py-4 bg-brand-purple/10 border border-brand-purple/40 text-brand-purple hover:text-white font-bold tracking-wide rounded-xl hover:shadow-[0_4px_20px_rgba(117,76,240,0.3)] hover:bg-brand-purple transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {isLoading ? (
+                    <span className="flex items-center justify-center gap-2">
+                      <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
+                      </svg>
+                      Sending…
+                    </span>
+                  ) : "Send Message"}
                 </button>
+                {error && (
+                  <p className="text-sm text-red-500 mt-2 text-center">{error}</p>
+                )}
               </form>
             )}
           </motion.div>
