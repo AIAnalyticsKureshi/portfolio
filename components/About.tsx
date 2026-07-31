@@ -5,7 +5,7 @@ import { MapPin, Target, Globe, CheckCircle2 } from "lucide-react";
 
 const TECH_STACK = [
   { category: "BI & REPORTING", items: ["Power BI", "DAX", "Power Query", "KPI Design", "Data Storytelling", "CSRD/ESG Reporting"] },
-  { category: "DATA & DATABASES", items: ["Star Schema Design", "ETL Pipelines", "Data Quality", "SQL", "Python", "Pandas", "SQLite", "SQL Server", "MySQL"] },
+  { category: "DATA & DATABASES", items: ["Star Schema Design", "ETL Pipelines", "Data Quality", "SQL", "Python", "Pandas", "dbt", "SQLite", "SQL Server", "MySQL"] },
   { category: "PRODUCTIVITY", items: ["Advanced Excel", "Git", "VS Code", "Notion"] },
   { category: "COMPLIANCE", items: ["GDPR (Data Privacy)", "CSRD (Sustainability Reporting)"] },
   { category: "CERTIFICATIONS", items: ["Microsoft PL-300 · In Progress · August 2026", "Advanced Excel · Certified"] }

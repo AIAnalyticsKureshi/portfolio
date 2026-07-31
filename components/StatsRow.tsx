@@ -30,7 +30,7 @@ function Counter({ from, to, duration, suffix = "", prefix = "" }: { from: numbe
 export default function StatsRow() {
   const stats = [
     { from: 0, to: 39, suffix: "+", label: "BI Projects Delivered" },
-    { from: 0, to: 3, suffix: "+", label: "Years Experience" },
+    { from: 0, to: 3, suffix: "+", label: "Years of Experience" },
     { from: 0, to: 3, suffix: "", label: "Portfolio Projects on GitHub" },
     { from: 0, to: 40, suffix: "%", label: "Reporting Time Reduced" }
   ];
