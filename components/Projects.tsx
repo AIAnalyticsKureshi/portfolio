@@ -48,7 +48,7 @@ export default function Projects() {
   ];
 
   return (
-    <section className="relative z-20 w-full min-h-screen bg-[#121212] py-24 px-6 md:px-20 text-white border-t border-white/8">
+    <section id="projects" className="relative z-20 w-full min-h-screen bg-[#121212] py-24 px-6 md:px-20 text-white border-t border-white/8 scroll-mt-20">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 16 }}

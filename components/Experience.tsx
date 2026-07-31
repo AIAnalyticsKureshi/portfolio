@@ -1,11 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap, Trophy, Award, CheckCircle2 } from "lucide-react";
+import { GraduationCap, Award } from "lucide-react";
+
+const CERTIFICATIONS = [
+  { title: "Preparing Data for Analysis with Microsoft Excel", status: "Certified", statusColor: "text-green-300 bg-green-500/10 border-green-500/30" },
+  { title: "dbt Fundamentals", status: "Certified", statusColor: "text-green-300 bg-green-500/10 border-green-500/30" },
+  { title: "CompTIA Data+", status: "Certified", statusColor: "text-green-300 bg-green-500/10 border-green-500/30" },
+  { title: "SQL (Advanced)", status: "Certified", statusColor: "text-green-300 bg-green-500/10 border-green-500/30" },
+  { title: "Microsoft Power BI Data Analyst (PL-300)", status: "In progress · Aug 2026", statusColor: "text-orange-300 bg-orange-500/10 border-orange-500/30" },
+];
 
 export default function Experience() {
   return (
-    <section className="relative z-20 w-full bg-[#121212] py-24 px-6 md:px-20 text-white border-t border-white/8">
+    <section id="experience" className="relative z-20 w-full bg-[#121212] py-24 px-6 md:px-20 text-white border-t border-white/8 scroll-mt-20">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -60,6 +68,7 @@ export default function Experience() {
                 <span className="text-sm text-gray-400 bg-[#1A1A1A] px-3 py-1 rounded-full border border-white/8">Jun 2023 – Nov 2023</span>
               </div>
               <ul className="list-none space-y-3 pl-2 text-gray-400 font-normal leading-normal">
+                <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:bg-gray-600 before:rounded-full">Supported management reporting across production, logistics, and operations within an ISO 9001-certified manufacturing environment</li>
                 <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:bg-gray-600 before:rounded-full">Consolidated fragmented data into unified management reports, reducing rework by 30%</li>
                 <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:bg-gray-600 before:rounded-full">Led data quality validation processes, resolving inconsistencies before management review</li>
                 <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:bg-gray-600 before:rounded-full">Built documentation standards, reducing onboarding time for new reporting users by 20%</li>
@@ -77,9 +86,10 @@ export default function Experience() {
               <h4 className="text-xl md:text-2xl font-medium">Reporting & business operations analyst</h4>
               <p className="text-gray-300 mb-2 mt-1 font-medium">SMGK Developers Pvt. Ltd. · Mumbai, India</p>
               <div className="mb-5">
-                <span className="text-sm text-gray-400 bg-[#1A1A1A] px-3 py-1 rounded-full border border-white/8">May 2022 – Nov 2023 · Mumbai, India</span>
+                <span className="text-sm text-gray-400 bg-[#1A1A1A] px-3 py-1 rounded-full border border-white/8">May 2022 – May 2023 (1 year 1 month) · Mumbai, India</span>
               </div>
               <ul className="list-none space-y-3 pl-2 text-gray-400 font-normal leading-normal">
+                <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:bg-gray-600 before:rounded-full">Supported reporting and operational oversight across 15+ residential and commercial real-estate projects</li>
                 <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:bg-gray-600 before:rounded-full">Standardized reporting templates reducing preparation time by 32% across departments</li>
                 <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:bg-gray-600 before:rounded-full">Consolidated multi-team data into structured management reports for senior leadership</li>
                 <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:bg-gray-600 before:rounded-full">Applied data validation ensuring reliability of all business information delivered</li>
@@ -119,22 +129,22 @@ export default function Experience() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="bg-[#1A1A1A] border border-white/8 rounded-2xl p-8 md:p-10 hover:bg-[#212121] hover:border-white/20 transition-colors duration-200"
+                className="bg-[#1A1A1A] border border-white/8 rounded-2xl overflow-hidden divide-y divide-white/8"
               >
-                <div className="flex items-start gap-5">
-                  <div className="p-3 bg-[#212121] rounded-xl border border-white/8 text-gray-300">
-                    <Trophy className="w-6 h-6" />
-                  </div>
-                  <div className="w-full">
-                    <div className="flex flex-col md:flex-row md:items-start justify-between gap-3 mb-1">
-                      <h4 className="text-xl font-medium xl:max-w-[220px] 2xl:max-w-none">Microsoft PL-300 Power BI Data Analyst</h4>
-                      <span className="shrink-0 max-w-max text-xs font-medium tracking-wider text-orange-300 bg-orange-500/10 px-3 py-1.5 rounded-full border border-orange-500/30 uppercase">
-                        In progress
-                      </span>
+                {CERTIFICATIONS.map((cert, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center justify-between gap-3 p-5 hover:bg-[#212121] transition-colors duration-200"
+                  >
+                    <div className="flex items-center gap-3 min-w-0">
+                      <Award className="w-5 h-5 shrink-0 text-gray-400" />
+                      <span className="font-medium truncate">{cert.title}</span>
                     </div>
-                    <p className="text-gray-500 text-sm mt-2">Expected August 2026</p>
+                    <span className={`shrink-0 text-xs font-medium tracking-wider px-3 py-1.5 rounded-full border uppercase ${cert.statusColor}`}>
+                      {cert.status}
+                    </span>
                   </div>
-                </div>
+                ))}
               </motion.div>
 
               <motion.div
@@ -142,28 +152,6 @@ export default function Experience() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="bg-[#1A1A1A] border border-white/8 rounded-2xl p-8 md:p-10 hover:bg-[#212121] hover:border-white/20 transition-colors duration-200"
-              >
-                <div className="flex items-start gap-5">
-                  <div className="p-3 bg-[#212121] rounded-xl border border-white/8 text-gray-300">
-                    <Award className="w-6 h-6" />
-                  </div>
-                  <div className="w-full">
-                    <div className="flex items-start justify-between gap-3 mb-1">
-                      <h4 className="text-xl font-medium">Advanced Excel</h4>
-                      <span className="shrink-0 inline-flex items-center gap-1 text-xs font-medium tracking-wider text-green-300 bg-green-500/10 px-3 py-1.5 rounded-full border border-green-500/30 uppercase">
-                        Certified <CheckCircle2 className="w-3.5 h-3.5" />
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
                 className="bg-[#1A1A1A] border border-white/8 rounded-2xl p-8 md:p-10 hover:bg-[#212121] hover:border-white/20 transition-colors duration-200"
               >
                 <div className="flex items-start gap-5">

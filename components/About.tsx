@@ -8,12 +8,11 @@ const TECH_STACK = [
   { category: "Data & databases", items: ["Star Schema Design", "ETL Pipelines", "Data Quality", "SQL", "Python", "Pandas", "dbt", "SQLite", "SQL Server", "MySQL"] },
   { category: "Productivity", items: ["Advanced Excel", "Git", "VS Code", "Notion"] },
   { category: "Compliance", items: ["GDPR (Data Privacy)", "CSRD (Sustainability Reporting)"] },
-  { category: "Certifications", items: ["Microsoft PL-300 · In progress · August 2026", "Advanced Excel · Certified"] }
 ];
 
 export default function About() {
   return (
-    <section className="relative z-20 w-full bg-[#121212] py-24 px-6 md:px-20 text-white border-t border-white/8">
+    <section id="about" className="relative z-20 w-full bg-[#121212] py-24 px-6 md:px-20 text-white border-t border-white/8 scroll-mt-20">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <motion.div
@@ -48,7 +47,7 @@ export default function About() {
               </li>
               <li className="flex items-start gap-2">
                 <Target className="w-5 h-5 shrink-0 mt-0.5 text-gray-400" />
-                <span><strong className="font-medium text-white">BI Analyst</strong> · Reporting Analyst · Power BI Developer</span>
+                <span><strong className="font-medium text-white">BI Analyst</strong> · Reporting Analyst · Power BI Developer · Junior Controller</span>
               </li>
               <li className="flex items-start gap-2">
                 <Globe className="w-5 h-5 shrink-0 mt-0.5 text-gray-400" />
@@ -77,21 +76,14 @@ export default function About() {
                 <div key={idx} className="group cursor-default">
                   <h4 className="text-xs font-medium tracking-[0.2em] text-gray-400 uppercase mb-4">{group.category}</h4>
                   <div className="flex flex-wrap gap-2.5">
-                    {group.items.map((tech, tIdx) => {
-                      const isCert = group.category === "Certifications";
-                      return (
-                        <span
-                          key={tIdx}
-                          className={`px-4 py-2 text-sm font-medium border rounded-full transition-colors duration-200 ${
-                            isCert
-                            ? "bg-[#212121] border-white/20 text-white"
-                            : "bg-[#1A1A1A] border-white/8 text-gray-300 hover:bg-[#212121] hover:border-white/20 hover:text-white"
-                          }`}
-                        >
-                          {tech}
-                        </span>
-                      )
-                    })}
+                    {group.items.map((tech, tIdx) => (
+                      <span
+                        key={tIdx}
+                        className="px-4 py-2 text-sm font-medium border rounded-full transition-colors duration-200 bg-[#1A1A1A] border-white/8 text-gray-300 hover:bg-[#212121] hover:border-white/20 hover:text-white"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
                 </div>
               ))}
