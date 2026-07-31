@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Linkedin, Github } from "lucide-react";
+import { Linkedin, Github, Mail } from "lucide-react";
 
 export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -15,7 +15,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="relative z-20 w-full bg-[#121212] py-24 px-6 md:px-20 text-white border-t border-white/5">
+    <section className="relative z-20 w-full bg-[#FAFAFA] py-24 px-6 md:px-20 text-[#0F172A] border-t border-slate-200">
       <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           
@@ -27,17 +27,17 @@ export default function Contact() {
             className="flex flex-col justify-center"
           >
             <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">Let's Work Together.</h2>
-            <p className="text-gray-300 text-lg leading-relaxed mb-10">
+            <p className="text-[#64748B] text-lg leading-relaxed mb-10">
               Open to BI Analyst and Reporting roles across Germany. No sponsorship needed. Available to start immediately.
             </p>
 
-            <div className="flex items-center gap-4 mb-10 p-4 bg-white/[0.03] border border-white/10 rounded-2xl w-max hover:border-orange-500/30 transition-colors group">
-              <div className="p-3 bg-white/5 rounded-xl text-orange-400 group-hover:bg-orange-500/10 transition-colors">
-                <i className="fa-solid fa-envelope" style={{ color: 'inherit', fontSize: '24px', marginRight: '8px', verticalAlign: 'middle' }}></i>
+            <div className="flex items-center gap-4 mb-10 p-4 bg-white border border-slate-200 rounded-2xl w-max hover:border-brand-purple/30 transition-colors group shadow-sm">
+              <div className="p-3 bg-brand-purple/10 rounded-xl text-brand-purple transition-colors">
+                <Mail className="w-6 h-6" />
               </div>
               <div>
-                <p className="text-xs text-gray-500 uppercase tracking-widest font-bold mb-1">Email</p>
-                <a href="mailto:mohd.kureshi04@gmail.com" className="text-lg md:text-xl font-medium hover:text-orange-400 transition-colors">mohd.kureshi04@gmail.com</a>
+                <p className="text-xs text-[#64748B] uppercase tracking-widest font-bold mb-1">Email</p>
+                <a href="mailto:mohd.kureshi04@gmail.com" className="text-lg md:text-xl font-medium hover:text-brand-purple transition-colors">mohd.kureshi04@gmail.com</a>
               </div>
             </div>
 
@@ -46,7 +46,7 @@ export default function Contact() {
                 href="https://www.linkedin.com/in/mohammad-kureshi/" 
                 target="_blank" 
                 rel="noreferrer"
-                className="flex items-center gap-3 px-6 py-3 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 hover:border-orange-500/40 hover:shadow-[0_0_15px_rgba(249,115,22,0.2)] transition-all duration-300"
+                className="flex items-center gap-3 px-6 py-3 bg-white border border-slate-200 rounded-full hover:border-brand-purple/40 hover:shadow-sm transition-all duration-300"
               >
                 <Linkedin className="w-5 h-5 text-[#0A66C2]" />
                 <span className="font-semibold">LinkedIn</span>
@@ -55,7 +55,7 @@ export default function Contact() {
                 href="https://github.com/AIAnalyticsKureshi" 
                 target="_blank" 
                 rel="noreferrer"
-                className="flex items-center gap-3 px-6 py-3 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 hover:border-orange-500/40 hover:shadow-[0_0_15px_rgba(249,115,22,0.2)] transition-all duration-300"
+                className="flex items-center gap-3 px-6 py-3 bg-white border border-slate-200 rounded-full hover:border-brand-purple/40 hover:shadow-sm transition-all duration-300"
               >
                 <Github className="w-5 h-5" />
                 <span className="font-semibold">GitHub</span>
@@ -68,9 +68,9 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-white/[0.02] border border-white/10 rounded-3xl p-8 backdrop-blur-md shadow-[0_0_30px_rgba(0,0,0,0.5)] relative overflow-hidden group hover:border-orange-500/20 transition-colors"
+            className="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm relative overflow-hidden group hover:border-brand-purple/20 transition-colors"
           >
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-orange-500/50 to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-brand-purple/50 to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
 
             {isSubmitted ? (
               <motion.div 
@@ -78,16 +78,16 @@ export default function Contact() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="text-center py-16"
               >
-                <div className="w-20 h-20 mx-auto bg-green-500/20 rounded-full flex items-center justify-center mb-6 border border-green-500/50 shadow-[0_0_20px_rgba(34,197,94,0.3)]">
-                  <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div className="w-20 h-20 mx-auto bg-brand-green/10 rounded-full flex items-center justify-center mb-6 border border-brand-green/40">
+                  <svg className="w-10 h-10 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
                 <h3 className="text-2xl font-semibold mb-3">Thank you!</h3>
-                <p className="text-gray-400">I will respond within 24 hours.</p>
+                <p className="text-[#64748B]">I will respond within 24 hours.</p>
                 <button 
                   onClick={() => setIsSubmitted(false)}
-                  className="mt-8 px-6 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-sm transition-colors hover:text-orange-400"
+                  className="mt-8 px-6 py-2 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-full text-sm transition-colors hover:text-brand-purple"
                 >
                   Send another message
                 </button>
@@ -95,35 +95,35 @@ export default function Contact() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6 pt-4">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm tracking-wider text-gray-500 font-bold uppercase">Name</label>
+                  <label htmlFor="name" className="text-sm tracking-wider text-[#64748B] font-bold uppercase">Name</label>
                   <input 
                     type="text" 
                     id="name" 
                     required 
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange-500/50 focus:bg-white/10 transition-colors"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-[#0F172A] focus:outline-none focus:border-brand-purple/50 focus:bg-white transition-colors"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm tracking-wider text-gray-500 font-bold uppercase">Email</label>
+                  <label htmlFor="email" className="text-sm tracking-wider text-[#64748B] font-bold uppercase">Email</label>
                   <input 
                     type="email" 
                     id="email" 
                     required 
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange-500/50 focus:bg-white/10 transition-colors"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-[#0F172A] focus:outline-none focus:border-brand-purple/50 focus:bg-white transition-colors"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm tracking-wider text-gray-500 font-bold uppercase">Message</label>
+                  <label htmlFor="message" className="text-sm tracking-wider text-[#64748B] font-bold uppercase">Message</label>
                   <textarea 
                     id="message" 
                     rows={4} 
                     required 
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange-500/50 focus:bg-white/10 transition-colors resize-none"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-[#0F172A] focus:outline-none focus:border-brand-purple/50 focus:bg-white transition-colors resize-none"
                   ></textarea>
                 </div>
                 <button 
                   type="submit" 
-                  className="w-full py-4 bg-orange-600/20 border border-orange-500/50 text-orange-400 hover:text-orange-300 font-bold tracking-wide rounded-xl hover:shadow-[0_0_20px_rgba(249,115,22,0.3)] hover:bg-orange-600/30 transition-all duration-300"
+                  className="w-full py-4 bg-brand-purple/10 border border-brand-purple/40 text-brand-purple hover:text-white font-bold tracking-wide rounded-xl hover:shadow-[0_4px_20px_rgba(117,76,240,0.3)] hover:bg-brand-purple transition-all duration-300"
                 >
                   Send Message
                 </button>

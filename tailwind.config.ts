@@ -11,6 +11,13 @@ const config: Config = {
       colors: {
         background: "#121212",
         foreground: "#ffffff",
+        brand: {
+          purple: "#754CF0",
+          teal: "#1EBAEB",
+          green: "#4FCD7B",
+          coral: "#EB895F",
+          amber: "#EE9D28",
+        },
       },
     },
   },

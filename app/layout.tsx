@@ -5,8 +5,20 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Mohammad Kureshi | BI Analyst",
-  description: "BI Analyst specializing in Power BI, SQL, Python, and building end-to-end BI systems.",
+  title: "Mohammad Kureshi | Business Intelligence Consultant & Data Analyst",
+  description: "BI Consultant specializing in Power BI, SQL, Python, and end-to-end analytics systems. Creator of FinSignal — an early warning system detecting budget overruns 25.6 days before traditional reporting.",
+  keywords: ["Business Intelligence", "Power BI", "SQL", "DAX", "Data Analyst", "BI Consultant", "Berlin", "Hamburg", "Germany"],
+  openGraph: {
+    title: "Mohammad Kureshi | Business Intelligence Consultant & Data Analyst",
+    description: "BI Consultant specializing in Power BI, SQL, Python, and end-to-end analytics systems.",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mohammad Kureshi | Business Intelligence Consultant & Data Analyst",
+    description: "BI Consultant specializing in Power BI, SQL, Python, and end-to-end analytics systems.",
+  },
 };
 
 export default function RootLayout({
@@ -16,9 +28,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
