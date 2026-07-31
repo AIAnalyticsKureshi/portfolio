@@ -37,7 +37,7 @@ export default function About() {
             </p>
 
             <p>
-              Alongside my M.A. studies in Germany (2024–2025), I built and delivered 39+ BI and reporting projects independently through InkWave, my freelance BI consultancy — authorized under official German freelance work permit.
+              Alongside my M.A. studies in Germany (2024–2025), I built and delivered 39+ BI and reporting projects independently through InkWave, my freelance BI consultancy. I&apos;m currently on a German job seeker visa, able to start full-time work as soon as I&apos;m hired.
             </p>
 
             <ul className="space-y-3 mt-4 text-gray-300 bg-[#1A1A1A] p-8 rounded-2xl border border-white/8">
@@ -55,7 +55,7 @@ export default function About() {
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="w-5 h-5 shrink-0 mt-0.5 text-gray-400" />
-                <span>GDPR-aware · CSRD-familiar · No sponsorship needed</span>
+                <span>GDPR-aware · CSRD-familiar · Job seeker visa (Germany)</span>
               </li>
             </ul>
 

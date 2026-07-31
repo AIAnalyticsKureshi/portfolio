@@ -44,7 +44,7 @@ export default function Experience() {
               <p className="text-orange-400 mb-2 mt-1 font-medium">InkWave (Self-employed) · Berlin</p>
               <div className="flex items-center gap-3 mb-5 flex-wrap">
                 <span className="text-sm text-gray-400 bg-[#1A1A1A] px-3 py-1 rounded-full border border-white/8">Jan 2025 – Present · Germany</span>
-                <span className="text-xs font-medium tracking-wider text-green-300 bg-green-500/10 px-3 py-1.5 rounded border border-green-500/30 uppercase">Official German freelance work permit</span>
+                <span className="text-xs font-medium tracking-wider text-green-300 bg-green-500/10 px-3 py-1.5 rounded border border-green-500/30 uppercase">Job seeker visa (Germany)</span>
               </div>
               <ul className="list-none space-y-3 pl-2 text-gray-300 font-normal leading-normal">
                 <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:bg-gray-600 before:rounded-full">Owned the full analytics lifecycle across 39+ BI and reporting projects for clients across Germany, UK, USA, Italy, France, and India</li>

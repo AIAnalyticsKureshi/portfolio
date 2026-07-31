@@ -54,7 +54,7 @@ export default function Contact() {
           >
             <h2 className="text-4xl md:text-6xl font-medium tracking-tight mb-6">Let&apos;s work together.</h2>
             <p className="text-gray-400 text-lg leading-normal mb-10">
-              Open to BI Analyst and Reporting roles across Germany. No sponsorship needed. Available to start immediately.
+              Open to BI Analyst and Reporting roles across Germany. On a job seeker visa — able to start full-time work as soon as I&apos;m hired.
             </p>
 
             <div className="flex items-center gap-4 mb-10 p-6 bg-[#1A1A1A] border border-white/8 rounded-2xl w-max hover:border-white/20 hover:bg-[#212121] transition-colors duration-200">

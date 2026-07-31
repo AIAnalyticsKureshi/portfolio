@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="relative z-20 w-full bg-[#121212] px-6 md:px-20 py-10 text-white border-t border-white/8">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <p className="text-sm text-gray-500">
-          © {year} Mohammad Kureshi. Built with Next.js & Tailwind.
+          © {year} Mohammad Kureshi.
         </p>
 
         <div className="flex items-center gap-4">

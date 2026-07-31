@@ -9,7 +9,7 @@ export default function WhyGermany() {
     "Projects built around German logistics, freight and supply chain industries",
     "ESG and CSRD sustainability reporting built into BI architecture",
     "GDPR-compliant data practices applied by design in every project",
-    "Authorized to work full-time immediately — zero visa sponsorship required",
+    "On a German job seeker visa — able to start full-time work as soon as I'm hired",
     "Available in Berlin · Munich · Hamburg · Frankfurt · Stuttgart · Remote"
   ];
 
