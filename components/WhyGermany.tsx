@@ -14,35 +14,30 @@ export default function WhyGermany() {
   ];
 
   return (
-    <section className="relative z-20 w-full bg-[#FAFAFA] py-24 px-6 md:px-20 text-[#0F172A] border-t border-slate-200">
+    <section className="relative z-20 w-full bg-[#121212] py-24 px-6 md:px-20 text-white border-t border-white/8">
       <div className="max-w-6xl mx-auto">
-        <motion.div 
-          initial={{ opacity: 0, y: 50 }}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
           className="mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight">Built for the German Market.</h2>
+          <h2 className="text-4xl md:text-6xl font-medium tracking-tight">Built for the German market.</h2>
         </motion.div>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="bg-white border border-slate-200 rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm relative overflow-hidden group hover:border-brand-purple/30 transition-all duration-500 hover:shadow-md"
+          transition={{ duration: 0.7, delay: 0.15 }}
+          className="bg-[#1A1A1A] border border-white/8 rounded-3xl p-10 md:p-12 lg:p-16 hover:border-white/20 transition-colors duration-200"
         >
-          {/* Accent Left Border */}
-          <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-brand-purple to-purple-800"></div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-12 relative z-10 pl-6 border-l border-slate-100 ml-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-12 pl-6 border-l border-white/8 ml-2">
             {points.map((point, idx) => (
               <div key={idx} className="flex items-start gap-4">
-                <div className="mt-1 text-brand-green">
-                  <CheckCircle2 className="w-6 h-6" />
-                </div>
-                <p className="text-[#475569] md:text-lg leading-relaxed font-light">{point}</p>
+                <CheckCircle2 className="w-5 h-5 shrink-0 text-green-400 mt-0.5" />
+                <p className="text-gray-300 md:text-lg leading-normal font-normal">{point}</p>
               </div>
             ))}
           </div>
