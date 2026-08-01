@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap, Award } from "lucide-react";
+import { GraduationCap, Award, ArrowUpRight } from "lucide-react";
 
 const CERTIFICATIONS = [
   { title: "Preparing Data for Analysis with Microsoft Excel", status: "Certified", statusColor: "text-green-300 bg-green-500/10 border-green-500/30" },
@@ -124,11 +124,39 @@ export default function Experience() {
                 </div>
               </motion.div>
 
-              <motion.div
+              <motion.a
+                href="/certifications/DataCamp-Associate-Data-Analyst.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
+                className="group block bg-gradient-to-br from-orange-500/10 to-[#1A1A1A] border border-orange-500/30 rounded-2xl p-8 md:p-10 hover:border-orange-500/50 hover:from-orange-500/15 transition-colors duration-200"
+              >
+                <div className="flex items-start gap-5">
+                  <div className="p-3 bg-orange-500/10 rounded-xl border border-orange-500/30 text-orange-300 shrink-0">
+                    <Award className="w-6 h-6" />
+                  </div>
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-2 flex-wrap mb-1">
+                      <h4 className="text-xl font-medium">Associate Data Analyst</h4>
+                      <span className="text-xs font-medium tracking-wider text-orange-300 bg-orange-500/10 px-2.5 py-1 rounded-full border border-orange-500/30 uppercase">Featured</span>
+                    </div>
+                    <p className="text-gray-300 font-medium mb-1">DataCamp</p>
+                    <p className="text-gray-500 text-sm mb-4">Certified July 21, 2026 · ID DAA0015790119028</p>
+                    <span className="inline-flex items-center gap-1.5 text-sm font-medium text-orange-300 group-hover:text-orange-200 transition-colors">
+                      View certificate <ArrowUpRight className="w-4 h-4" />
+                    </span>
+                  </div>
+                </div>
+              </motion.a>
+
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.15 }}
                 className="bg-[#1A1A1A] border border-white/8 rounded-2xl overflow-hidden divide-y divide-white/8"
               >
                 {CERTIFICATIONS.map((cert, idx) => (
